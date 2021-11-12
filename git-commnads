@@ -1,0 +1,30 @@
+*****GIT****
+
+git init    --> to create a local git repo
+
+git config --global user.name "sreekanth"
+git config --global user.email "sreekanth0195@gmail"
+
+git config --list   --> shows user details i.e sreekanth details
+
+GIT PHAESES :  1) workspace area
+               2) staging / index area
+               3) local repo
+
+SENARIO - touch file1 (give content as "hello world")
+          git status --> this file is in workspace area (shows as UNTRACKED FILE in RED colour)
+          git add    --> add this file from workspace to staging area 
+          git status --> (shows as CHANGES TO BE COMMITTED in green colour) 
+          git commit -m "label" file1 --> this file will go from staging area to local repo
+          git log    --> gives commit id for the file at local repo
+          git show cid  --> gives file info
+AGAIN YOU MADE CHANGES IN file1 CREATED, IT WILL GO TO WORKSPACE (AS UNTRACKED FILE in RED COLOUR)
+***since the file1 is alredy created and just edit is done it can directly commit to local repo no need of staging area(i.e git add)
+ 
+git add .        --> this command will add ALL files in .git into staging area
+git reset HEAD 'filename'  --> revert back your added file in staging area to workspace
+git reset --soft cid   ---> revert backs commit from local repo to staging area
+git reset --mixed cid  ---> reverts your commit directly from local repo to workspace(at that time if there are any filea in staging area they
+                                                                                      will also come back to workspace )
+
+
