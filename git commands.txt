@@ -1,0 +1,12 @@
+*****GIT****
+
+git init    --> to create a local git repo
+
+git config --global user.name "sreekanth"
+git config --global user.email "sreekanth0195@gmail"
+
+git config --list   --> shows user details i.e sreekanth details
+
+GIT PHAESES :  1) workspace area
+               2) staging / index area
+               3) local repo
