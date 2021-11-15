@@ -10,3 +10,58 @@ git config --list   --> shows user details i.e sreekanth details
 GIT PHAESES :  1) workspace area
                2) staging / index area
                3) local repo
+
+SENARIO - touch file1 (give content as "hello world")
+          git status --> this file is in workspace area (shows as UNTRACKED FILE in RED colour)
+          git add    --> add this file from workspace to staging area 
+          git status --> (shows as CHANGES TO BE COMMITTED in green colour) 
+          git commit -m "label" file1 --> this file will go from staging area to local repo
+          git log    --> gives commit id for the file at local repo
+          git show cid  --> gives file info
+AGAIN YOU MADE CHANGES IN file1 CREATED, IT WILL GO TO WORKSPACE (AS UNTRACKED FILE in RED COLOUR)
+***since the file1 is alredy created and just edit is done it can directly commit to local repo no need of staging area(i.e git add)
+ 
+git add .        --> this command will add ALL files in .git into staging area
+git reset HEAD 'filename'  --> revert back your added file in staging area to workspace
+git reset --soft cid   ---> revert backs commit from local repo to staging area
+git reset --mixed cid  ---> reverts your commit directly from local repo to workspace(at that time if there are any filea in staging area they
+                                                                                      will also come back to workspace )
+git clone https://github.com/sreekanth0195/gitjenkinsintegration2.git --> to clone git hub repository to your p.c
+ls
+cd repository name
+touch filename
+git status
+git add .
+git commit -m "label" filename
+git push
+
+COLLABORATION ACCESS --> through this you can push data needed from oranisation to your accounts.
+
+***************HOW TO CHECK LOGS OF A REPO***************			
+git log  --> shows commits logs
+git log -n --> give a numbe rin place of n""
+git log --oneline --> gives in a shoot form
+git log --author=ravi --> give all commits made by ravi
+git log --author=ravi --oneline -n
+git log --since=yy-mm-dd
+git log --until=yy-mm-dd
+git log --since=yy-mm-dd --until=yy-mm-dd
+git log --after=*yy-mm-dd hh:mm* --before=*yy-mm-dd hh:mm*
+git log -grep="label name"  --> respective label deatails of commit file
+
+************BRANCHING**************
+
+git branch  --> shows a git branches
+git branch "banch-name"  --> creates a branch with your given name
+git branch
+git checkout "branch-name" --> switches to branch you want
+BACKPORTING - switching the data b/w branches is called backporting.
+git merge "branch-name" --> give the branch name from which you want to copy data
+git cherry-pick cid  --> only copies specific commit b/w branches
+git push origin "branch-name" --> pushes your local to central repository
+git branch -d "branch-name" --> deletes a branch in local
+git push origin -d "branch-name" --> deletes your branch in central repo
+
+
+
+
